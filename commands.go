@@ -5,27 +5,23 @@ import (
 	"github.com/mitchellh/cli"
 )
 
-func Commands(meta *command.Meta) map[string]cli.CommandFactory {
+func Commands() map[string]cli.CommandFactory {
 	return map[string]cli.CommandFactory{
+		"init": func() (cli.Command, error) {
+			return &command.InitCommand{}, nil
+		},
 		"add": func() (cli.Command, error) {
-			return &command.AddCommand{
-				Meta: *meta,
-			}, nil
+			return &command.AddCommand{}, nil
 		},
 		"list": func() (cli.Command, error) {
-			return &command.ListCommand{
-				Meta: *meta,
-			}, nil
+			return &command.ListCommand{}, nil
 		},
 		"delete": func() (cli.Command, error) {
-			return &command.DeleteCommand{
-				Meta: *meta,
-			}, nil
+			return &command.DeleteCommand{}, nil
 		},
 
 		"version": func() (cli.Command, error) {
 			return &command.VersionCommand{
-				Meta:     *meta,
 				Version:  Version,
 				Revision: GitCommit,
 				Name:     Name,
