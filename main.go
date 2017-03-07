@@ -13,6 +13,11 @@ func main() {
 	c.Args = os.Args[1:]
 
 	c.Commands = Commands()
+	/*c.Commands = map[string]cli.CommandFactory{
+		"init": func() (cli.Command, error) {
+			return &InitCommand{}, nil
+		},
+	}*/
 
 	exitCode, err := c.Run()
 	if err != nil {

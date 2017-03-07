@@ -9,7 +9,6 @@ type AddCommand struct {
 }
 
 func (c *AddCommand) Run(args []string) int {
-	// Write your code here
 
 	return 0
 }

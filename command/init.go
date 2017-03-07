@@ -3,7 +3,7 @@ package command
 import (
 	"database/sql"
 	"log"
-	"os"
+	_ "os"
 
 	_ "github.com/mattn/go-sqlite3"
 	_ "github.com/mitchellh/cli"
@@ -20,13 +20,14 @@ func (c *InitCommand) Run(args []string) int {
 		return 0
 	    }
 	*/
-	os.Remove(dbPath())
+	//os.Remove(dbPath())
 
 	db, err := sql.Open("sqlite3", dbPath())
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer db.Close()
+	println(dbPath())
 
 	sqlStmt := `
 	CREATE TABLE todos (
@@ -37,6 +38,7 @@ func (c *InitCommand) Run(args []string) int {
 	    updated_at integer NOT NULL
 	);
 	`
+	_, err = db.Exec(sqlStmt)
 	if err != nil {
 		log.Printf("%q: %s\n", err, sqlStmt)
 		return 0
