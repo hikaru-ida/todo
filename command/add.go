@@ -13,9 +13,6 @@ type AddCommand struct {
 }
 
 func (c *AddCommand) Run(args []string) int {
-	for i := 0; i < len(args); i++ {
-		fmt.Println(args[i])
-	}
 	if len(args) == 0 {
 		fmt.Println("[ERROR] Must set task")
 		return 0
