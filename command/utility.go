@@ -11,6 +11,8 @@ func dbPath() string {
 	if err != nil {
 	}
 	return home + "/todo.db"
+	//return home
+
 }
 
 func exists(filename string) bool {

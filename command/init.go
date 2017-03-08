@@ -13,10 +13,14 @@ type InitCommand struct {
 }
 
 func (c *InitCommand) Run(args []string) int {
+	if len(args) != 0 {
+		println("invalid")
+		return 0
+	}
 	isDatabaseExists := exists(dbPath())
 
 	if isDatabaseExists {
-		println("Database is alreadey exists")
+		println("Database is already exists")
 		return 0
 	}
 	os.Remove(dbPath())
