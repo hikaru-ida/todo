@@ -3,7 +3,7 @@ package command
 import (
 	"database/sql"
 	"log"
-	_ "os"
+	"os"
 
 	_ "github.com/mattn/go-sqlite3"
 	_ "github.com/mitchellh/cli"
@@ -13,14 +13,13 @@ type InitCommand struct {
 }
 
 func (c *InitCommand) Run(args []string) int {
-	//isDatabaseExists := exists(dbPath())
+	isDatabaseExists := exists(dbPath())
 
-	/*if isDatabaseExists {
+	if isDatabaseExists {
 		println("Database is alreadey exists")
 		return 0
-	    }
-	*/
-	//os.Remove(dbPath())
+	}
+	os.Remove(dbPath())
 
 	db, err := sql.Open("sqlite3", dbPath())
 	if err != nil {
