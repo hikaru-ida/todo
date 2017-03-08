@@ -19,6 +19,7 @@ func (c *ListCommand) Run(args []string) int {
 	var all bool
 	flags := flag.NewFlagSet("list", flag.ContinueOnError)
 	flags.BoolVar(&all, "all", false, "show all task")
+	flags.BoolVar(&all, "a", false, "show all task")
 
 	if err := flags.Parse(args); err != nil {
 		return 1
