@@ -20,7 +20,7 @@ func (c *ListCommand) Run(args []string) int {
 	flags := flag.NewFlagSet("list", flag.ContinueOnError)
 	flags.BoolVar(&all, "all", false, "show all task")
 
-	if err := flags.Parse(args[1:]); err != nil {
+	if err := flags.Parse(args); err != nil {
 		return 1
 	}
 
