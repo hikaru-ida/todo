@@ -4,20 +4,30 @@ Command line todo list.
 
 
 ## Usage
-* todo Init
-Initialize a database for todo list.
+* Initialize a database for todo list.
+```
+$ todo init
+```
 
-* todo list 
 List todo.
+```
+$ todo list [-a][-all]
+```
 
-* todo add
 Add todo.
+```
+$ todo add id
+```
 
-* todo delete
 Delete todo.
+```
+$ todo delete id
+```
 
-* todo done
 Make the element done.
+```
+$ todo done id
+``` 
 
 
 
