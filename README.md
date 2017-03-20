@@ -32,7 +32,9 @@ $ todo done id
 
 
 ## Install
+```
 go get github.com/hikaru-ida/todo
+```
 
 
 
