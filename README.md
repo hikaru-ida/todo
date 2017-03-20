@@ -4,7 +4,7 @@ Command line todo list.
 
 
 ## Usage
-* Initialize a database for todo list.
+Initialize a database for todo list.
 ```
 $ todo init
 ```
